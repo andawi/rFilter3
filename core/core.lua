@@ -71,9 +71,12 @@ function spellOnCD(frame, time)
 
 	if frame.glow then ActionButton_HideOverlayGlow(frame.iconframe) end
 	
-	--[[print('swirl of doom')
+	--swirl of doom
+	--[[
 	frame.iconframe.cd:SetCooldown(GetTime(), time)
 	frame.iconframe.cd:SetAlpha(frame.alpha.cooldown.icon)
+	frame.iconframe.cd:SetSwipeColor(0,0,0,0)
+	frame.iconframe.cd:SetDrawEdge(false)
 	frame.iconframe.cd:Show()
 	]]
 	
@@ -487,7 +490,7 @@ end
       if  f.spelllist and f.spelllist[1] then
         for k, spellid in ipairs(f.spelllist) do
           local gsi_name, gsi_rank, gsi_icon = GetSpellInfo(spellid)
-          if GetSpellBookItemName(gsi_name) then
+          if GetSpellBookItemName(gsi_name) == gsi_name then -- PW:Solace - Inner Fire fix
             --reset spellid and icon of the iconframe
             f.spellid = spellid
             f.iconframe.icon:SetTexture(gsi_icon)
@@ -542,7 +545,14 @@ end
     anim:SetDuration(cfg.updatetime)
     ag:SetLooping("REPEAT")
     ag:SetScript("OnLoop", function(self, event, ...)
-      if aura_count > 0 then
+      if InCombatLockdown() == false then 
+		CursorAnchorFrame:Hide()
+		return 
+	  else
+		CursorAnchorFrame:Show()
+	  end
+	  
+	  if aura_count > 0 then
         searchAuras()
       end
       if cooldown_count > 0 then

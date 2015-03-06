@@ -99,8 +99,8 @@
 							  a1 = "CENTER",
 							  a2 = "CENTER",
 							  af = "UIParent",
-							  x = -50,
-							  y = 50
+							  x = -30,
+							  y = 30
 							},
 	  alpha           = {                             --TABLE, Set the alpha values of your icons (transparency)
 						  cooldown = {
@@ -121,7 +121,7 @@
 		--visibility_state    = ,  --(optional) attribute that lets you show/hide the frame on a given macro condition. example: "[stance:2] show; hide"
 		glow				= true,						-- show Blizzard GlowOverlay
 		border				= nil,
-		sound				= "Interface\\Addons\\SharedMedia_MyMedia\\sound\\neoM_mrmba.ogg", 
+		sound				= nil, 
 		size                = 26,                       --NUMBER, the size of the icon
 		hide_ooc            = false,                     --true/false (optional), hide icon out of combat
 		desaturate          = false,                     --true/false (optional), desaturate the icon if not found
@@ -132,8 +132,43 @@
 							  a1 = "CENTER",
 							  a2 = "CENTER",
 							  af = "UIParent",
-							  x = -17,
-							  y = 50
+							  x = 0,
+							  y = 30
+							},
+	  alpha           = {                             --TABLE, Set the alpha values of your icons (transparency)
+						  cooldown = {
+							frame = 1,
+							icon = 0.1,
+						  },
+						  no_cooldown = {
+							frame = 1,
+							icon = 1,
+						  },
+						},
+
+		},
+	
+	{spellid             = 14914,    --holy fire                  --NUMBER, the spellid to track this will represent the icon if none is found
+		spelllist           = { 129250 },       --TABLE (optional), you can check a list of spell cooldowns (nice for talents of the same talent-tier)
+		spec                = nil,                      --nil, 1, 2 or 3 (optional), will only display the icon if your current specilization matches the setting
+		--visibility_state    = ,  --(optional) attribute that lets you show/hide the frame on a given macro condition. example: "[stance:2] show; hide"
+		glow				= true,						-- show Blizzard GlowOverlay#
+		glowtrail			= 5,						-- glow off after x seconds
+		border				= nil,
+		--sound				= "Interface\\Addons\\SharedMedia_MyMedia\\sound\\Flowers-notification_sound.ogg", 
+		sound				= "Interface\\Addons\\SharedMedia_MyMedia\\sound\\8bit_notification.ogg", 
+		size                = 26,                       --NUMBER, the size of the icon
+		hide_ooc            = false,                     --true/false (optional), hide icon out of combat
+		desaturate          = false,                     --true/false (optional), desaturate the icon if not found
+		move_ingame         = false,                     --true/false (optional), in case you want to move the frame ingame,
+		setToCursor 		= true,
+		--The size will be the MINIMUM frame size you can resize to, so adjust the size in case you need lower minimum size ingame
+	  pos                 = {                         --TABLE, the position of the icon (http://www.wowwiki.com/API_Region_SetPoint)
+							  a1 = "CENTER",
+							  a2 = "CENTER",
+							  af = "UIParent",
+							  x = 30,
+							  y = 30
 							},
 	  alpha           = {                             --TABLE, Set the alpha values of your icons (transparency)
 						  cooldown = {
