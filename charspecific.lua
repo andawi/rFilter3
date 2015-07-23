@@ -148,15 +148,15 @@
 
 		},
 	
-	{spellid             = 129250,    -- PW: Solace                  --NUMBER, the spellid to track this will represent the icon if none is found
-		spelllist           = { 14914 },    --Holy Fire   --TABLE (optional), you can check a list of spell cooldowns (nice for talents of the same talent-tier)
+	{spellid             = 14914,    -- PW: Solace                  --NUMBER, the spellid to track this will represent the icon if none is found
+		--spelllist           = { 14914 },    --Holy Fire   --TABLE (optional), you can check a list of spell cooldowns (nice for talents of the same talent-tier)
 		spec                = nil,                      --nil, 1, 2 or 3 (optional), will only display the icon if your current specilization matches the setting
 		--visibility_state    = ,  --(optional) attribute that lets you show/hide the frame on a given macro condition. example: "[stance:2] show; hide"
 		glow				= true,						-- show Blizzard GlowOverlay#
 		glowtrail			= 5,						-- glow off after x seconds
 		border				= nil,
 		--sound				= "Interface\\Addons\\SharedMedia_MyMedia\\sound\\Flowers-notification_sound.ogg", 
-		sound				= "Interface\\Addons\\SharedMedia_MyMedia\\sound\\8bit_notification.ogg", 
+		--sound				= "Interface\\Addons\\SharedMedia_MyMedia\\sound\\8bit_notification.ogg", 
 		size                = 26,                       --NUMBER, the size of the icon
 		hide_ooc            = false,                     --true/false (optional), hide icon out of combat
 		desaturate          = false,                     --true/false (optional), desaturate the icon if not found
